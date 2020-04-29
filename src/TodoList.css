@@ -1,0 +1,14 @@
+.todo__list {
+  background-color: rgb(225, 255, 255);
+  padding: 20px;
+  text-align: center;
+  max-height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.todo {
+  border-bottom: 2px solid gainsboro;
+  width: max-content;
+  padding: 10px;
+}

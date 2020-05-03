@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { TodoList } from './TodoList';
-import { NewTodo } from './NewTodo';
+import NewTodo from './NewTodo';
 
 import users from './api/users';
 import todos from './api/todos';
@@ -9,28 +9,12 @@ import todos from './api/todos';
 class App extends React.Component {
   state = {
     todos: [...todos],
-    enteredTodo: '',
     user: '0',
-    id: 3,
-  }
-
-  setTodo = (enteredTodo) => {
-    this.setState({ enteredTodo });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-
+  addTodo = (todo) => {
     this.setState(prevState => ({
-      todos: [...prevState.todos,
-        {
-          title: prevState.enteredTodo,
-          completed: false,
-          userId: prevState.user,
-          id: prevState.id,
-        }],
-      enteredTodo: '',
-      id: prevState.id + 1,
+      todos: [...prevState.todos, todo],
     }));
   }
 
@@ -39,8 +23,6 @@ class App extends React.Component {
       user: event.target.value,
     });
   }
-
-  checkValidUser = () => this.state.user
 
   render() {
     return (
@@ -56,13 +38,10 @@ class App extends React.Component {
           </select>
         </label>
         <NewTodo
+          addTodo={this.addTodo}
           choosenUser={this.state.user}
-          checkValidUser={this.checkValidUser}
-          enteredTodo={this.state.enteredTodo}
-          handleChange={this.setTodo}
-          handleSubmit={this.handleSubmit}
         />
-        <TodoList todosViev={this.state.todos} />
+        <TodoList todosViev={this.state.todos} usersViev={users} />
       </div>
     );
   }

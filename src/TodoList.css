@@ -1,14 +1,32 @@
-.todo__list {
+
+.table {
   background-color: rgb(225, 255, 255);
   padding: 20px;
   text-align: center;
-  max-height: 300px;
-  overflow: scroll;
-  overflow-x: hidden;
+  width: 100%;
 }
 
-.todo {
-  border-bottom: 2px solid gainsboro;
-  width: max-content;
+.todo__list {
+  margin-top: 20px;
+  display: flex;
+  max-height: 350px;
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.table__header {
+  height: 40px;
+  background-color: rgba(100, 148, 237, 0.5);
+  width: 100%;
+}
+
+.table__body {
+  background-color: rgba(0, 100, 0, 0.3);
+  width: 100%;
+}
+
+td {
   padding: 10px;
+  width: 100%;
 }

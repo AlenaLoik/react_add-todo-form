@@ -1,3 +1,29 @@
 .App {
   text-align: center;
+  width: 800px;
+  box-sizing: border-box;
+  height: 600px;
+  margin: 0 auto;
+  background-color: rgba(127, 255, 212, 0.5);
+  padding: 0 30px;
+  border: 5px solid cadetblue;
+  font-family: fantasy;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: rgb(59, 0, 65);
+}
+
+select {
+  width: 250px;
+  height: 40px;
+  padding-left: 15px;
+}
+
+span {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(59, 0, 65, 0.8);
+  padding-left: 15px;
 }

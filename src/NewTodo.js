@@ -19,7 +19,9 @@ class NewTodo extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.title.length > 0) {
+    const { title } = this.state;
+
+    if (title.length > 0) {
       this.props.addTodo(this.state);
       this.setState(prevState => ({
         title: '',

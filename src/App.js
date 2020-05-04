@@ -41,7 +41,7 @@ class App extends React.Component {
           addTodo={this.addTodo}
           choosenUser={this.state.user}
         />
-        <TodoList todosViev={this.state.todos} usersViev={users} />
+        <TodoList todosView={this.state.todos} usersView={users} />
       </div>
     );
   }

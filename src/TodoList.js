@@ -2,7 +2,7 @@ import React from 'react';
 import './TodoList.css';
 import PropTypes from 'prop-types';
 
-export const TodoList = ({ todosViev, usersViev }) => (
+export const TodoList = ({ todosView, usersView }) => (
   <div className="todo__list">
     <table className="todo__table">
       <tr className="table__header">
@@ -11,10 +11,10 @@ export const TodoList = ({ todosViev, usersViev }) => (
         <th>user</th>
         <th>completed</th>
       </tr>
-      {todosViev.map(todo => (
+      {todosView.map(todo => (
         <tr className="table__body" key={todo.title}>
           <td>{todo.title}</td>
-          <td>{(usersViev.find(user => (user.id === todo.userId))).name}</td>
+          <td>{(usersView.find(user => (user.id === todo.userId))).name}</td>
           <td>{(todo.completed) ? 'done' : 'no'}</td>
         </tr>
       ))}
@@ -23,7 +23,7 @@ export const TodoList = ({ todosViev, usersViev }) => (
 );
 
 TodoList.propTypes = {
-  todosViev: PropTypes.arrayOf(
+  todosView: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
@@ -31,7 +31,7 @@ TodoList.propTypes = {
       completed: PropTypes.bool.isRequired,
     }),
   ).isRequired,
-  usersViev: PropTypes.arrayOf(
+  usersView: PropTypes.arrayOf(
     PropTypes.any,
   ).isRequired,
 };
